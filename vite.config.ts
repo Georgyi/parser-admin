@@ -1,6 +1,6 @@
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
-import path from 'path'
+import { defineConfig } from 'vite';
+import react from '@vitejs/plugin-react';
+import path from 'path';
 
 export default defineConfig({
   plugins: [react()],
@@ -9,4 +9,18 @@ export default defineConfig({
       '@': path.resolve(__dirname, 'src'),
     },
   },
-})
+  server: {
+    proxy: {
+      '/api': {
+        target: 'http://localhost:8080',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api/, '/api/v1'),
+      },
+      '/lapi': {
+        target: 'https://www.linkedin.com/jobs-guest/api/typeaheadHits',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/lapi/, ''),
+      },
+    },
+  },
+});

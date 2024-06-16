@@ -11,7 +11,7 @@ type InputControllerType = {
   inputProps?: InputProps;
 } & FlexProps;
 
-const InputController = ({
+export const InputController = ({
   placeholder = 'Input your text...',
   label,
   helpInfo,
@@ -29,11 +29,11 @@ const InputController = ({
   const errorMessage = '';
 
   return (
-    <Flex flexDir="column" {...props}>
+    <Flex flexDir="column" w="100%" {...props}>
       <FormControl>
         {label && <FormLabel>{label}</FormLabel>}
         <Flex flexDir="column">
-          <Input {...inputProps} {...field} />
+          <Input {...inputProps} {...field} placeholder={placeholder} />
           {helpInfo && <FormHelperText>{helpInfo}</FormHelperText>}
           {!!errorMessage && <FormHelperText color={errorMessage}>{errorMessage}</FormHelperText>}
         </Flex>
@@ -41,5 +41,3 @@ const InputController = ({
     </Flex>
   );
 };
-
-export default InputController;

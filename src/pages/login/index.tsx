@@ -1,7 +1,7 @@
 import React from 'react';
-import { Button, Flex, VStack } from '@chakra-ui/react';
+import { Button, VStack } from '@chakra-ui/react';
 
-import InputController from '@/components/form/input';
+import { InputController } from '@/components/form/input';
 import { useForm } from 'react-hook-form';
 import Container from "@/components/container";
 

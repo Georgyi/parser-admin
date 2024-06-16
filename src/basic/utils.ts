@@ -5,7 +5,7 @@ import { useAuthStore } from "./store/auth";
 
 export const handleUnauthorized = () => {
   queryClient.clear();
-  useAuthStore.getState().logout();
+  useAuthStore.getState().actions.logout();
 };
 
 export const getHeaders = (

@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { RIGHTS } from '@/basic/roles/constant';
-import GlobalFilterPage from '@/pages/global-filter';
+import GlobalFilterPage from '@/pages/parser-filter';
 import MessagesPage from '@/pages/messages';
 import JobsPage from '@/pages/jobs';
 import AnalyticsPage from '@/pages/analytics';

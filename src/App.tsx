@@ -6,7 +6,6 @@ import { Route, Routes } from 'react-router-dom';
 import { queryClient } from './basic/query-client';
 import { theme } from './basic/theme';
 
-
 function App() {
 const Login = lazy(() => import('./pages/login'));
 const ProtectedPages = lazy(() => import('./features/protected-pages'));
